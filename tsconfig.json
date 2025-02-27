@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipDefaultLibCheck": true,
+    "jsx": "preserve",
+    "types": [
+      "vitest/globals"
+    ]
+  },
+  "include": [
+    "tasks",
+    "core",
+    "providers"
+, "providers"  ]
+}
