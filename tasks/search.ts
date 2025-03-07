@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { isString } from '@0x-jerry/utils'
 import type { FunctionTool, IChatMessage } from '../providers'
-import { chatWithTool as chatWithTools } from '../providers/openai'
+import { chatWithToolStream } from '../providers/openai'
 import { toJsonSchema } from '@valibot/to-json-schema'
 import * as v from 'valibot'
 
@@ -40,7 +40,7 @@ const toolsConfig: FunctionTool[] = [
   }
 ]
 
-for await (const element of chatWithTools(message, toolsConfig)) {
+for await (const element of chatWithToolStream(message, toolsConfig)) {
   if (isString(element)) {
     process.stdout.write(element)
   } else if (element?.type === 'callingTool') {
